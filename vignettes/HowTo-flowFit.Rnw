@@ -123,7 +123,7 @@ Here we introduce flowFit, an R bioconductor library that fit a set of peaks (co
 \label{sub:single_peak_formula}
 
 The algorithm fit a set of $ N $ peaks on the acquired fcs files using the \Rpackage{minpack.lm}.
-The Levenberg-Marquardt algorithm provides a numerical solution to the problem of minimizing a function over a space of parameters.  It is an iterative technique that locates the minimum of a multivariate function. The “minimum” is expressed as the sum of squares of non-linear real-valued functions.
+The Levenberg-Marquardt algorithm provides a numerical solution to the problem of minimizing a function over a space of parameters.  It is an iterative technique that locates the minimum of a multivariate function. The "minimum" is expressed as the sum of squares of non-linear real-valued functions.
 
 We fit an initial single peak on the population of cells labeled and un-stimulated (the Parent Population) according to this formula:
 
@@ -165,7 +165,7 @@ Using this formulas it is possible to estimate the spacing between generations o
 
 The number of log decades represented by the original data's linear scale can be calculated as $ log(R) $ where R is the acquisition resolution (data range for the detector).
 
-The \Rfunction{proliferationFitting} and \Rfunction{parentFitting} functions automatically compute the log decades from the keywords in the FCS file or using the logarithm of the data Range  ( $ log(R) $ ). If the functions find a “log decades” keyword for the current detector in the FCS file, they use the value in the keyword, otherwise log decades are estimated from the detector acquisition resolution.
+The \Rfunction{proliferationFitting} and \Rfunction{parentFitting} functions automatically compute the log decades from the keywords in the FCS file or using the logarithm of the data Range  ( $ log(R) $ ). If the functions find a "log decades" keyword for the current detector in the FCS file, they use the value in the keyword, otherwise log decades are estimated from the detector acquisition resolution.
 
 % subsection generations_distance (end)
 
@@ -190,8 +190,8 @@ $$ M = a^2\exp\frac{(x - M)^2}{2s^2} + b^2\exp\frac{(x - (M-D))^2}{2s^2} + c^2\e
 \\
 
 Where the parameters a,b,c,d,e,f,g,h,i and l are proportional to the height of the peak.
-In the “fixed model” (options fixedModel=TRUE) the \Rpackage{minpack.lm} algorithm estimates the height of each peak but allows the user to keep constant one ore more of these variables: parent peak position (m), parent peak size (s) and generation’s distance (D).
-In the “dynamic model”  (options fixedModel=FALSE) the \Rpackage{minpack.lm} algorithm uses as parameters all the variables in the model: the height of each peak, the parent peak position (m), the parent peak size (s) and the generation’s distance (D).
+In the "fixed model" (options fixedModel=TRUE) the \Rpackage{minpack.lm} algorithm estimates the height of each peak but allows the user to keep constant one ore more of these variables: parent peak position (m), parent peak size (s) and generation's distance (D).
+In the "dynamic model"  (options fixedModel=FALSE) the \Rpackage{minpack.lm} algorithm uses as parameters all the variables in the model: the height of each peak, the parent peak position (m), the parent peak size (s) and the generation's distance (D).
 
 In the Levenberg-Marquadt algorithm implementation we use this formula to estimate the error between the model and the real data:
 
@@ -225,7 +225,7 @@ $$ Gen_1 = \frac{I_1}{I_{all}}*100 $$
 
 To evaluate the proliferation in the sample we can use the \Rfunction{proliferationIndex} function: proliferation index is calculated as the sum of the cells in all generations including the parental divided by the computed number of original parent cells theoretically present at the start of the experiment.
 
-The proliferation index it’s a measure of the fold increase in cell number in the culture over the course of the experiment:
+The proliferation index it's a measure of the fold increase in cell number in the culture over the course of the experiment:
 
 $$ \frac{\sum_0^iN_i}{\sum_0^iN^i/2^i} $$
 \\

@@ -1,7 +1,7 @@
 Package: flowFit
 Type: Package
 Title: Estimate proliferation in cell-tracking dye studies
-Version: 1.1.1
+Version: 1.1.2
 Date: 2012-11-29
 Author: Davide Rambaldi
 Maintainer: Davide Rambaldi <davide.rambaldi@gmail.com>
