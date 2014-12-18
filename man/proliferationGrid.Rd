@@ -28,7 +28,13 @@
 \author{ Davide Rambaldi }
 
 \examples{
-  plot(c(0,1023),c(0,1000), xlim=c(0,1023),ylim=c(0,1000),  xlab="FACS CHANNEL", ylab="# OF EVENTS", main="A flowFit Empty Plot")
+  plot(c(0,1023),c(0,1000), 
+       xlim=c(0,1023),
+       ylim=c(0,1000),  
+       xlab="FACS CHANNEL", 
+       ylab="# OF EVENTS", 
+       main="A flowFit Empty Plot")
+       
   # create a grid with parent at 800
   proliferationGrid(1000, dataRange=1024, logDecades=4)
 }

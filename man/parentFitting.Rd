@@ -8,7 +8,18 @@
 \description{ Estimate the proliferation of a cell population in cell-tracking dye studies. parentFitting: fit the parent population }
 
 \usage{
-parentFitting(flowframe, channel, estimatedPeakPosition = NA, estimatedPeakSize = NA, dataRange = NA,  logDecades = NA, binning = TRUE, breaks = 1024, dataSmooth = TRUE, smoothWindow = 2, fixedModel = FALSE, fixedPars = NA, verbose = FALSE )
+parentFitting(flowframe, channel, 
+              estimatedPeakPosition = NA, 
+              estimatedPeakSize = NA, 
+              dataRange = NA,  
+              logDecades = NA, 
+              binning = TRUE, 
+              breaks = 1024, 
+              dataSmooth = TRUE, 
+              smoothWindow = 2, 
+              fixedModel = FALSE, 
+              fixedPars = NA, 
+              verbose = FALSE )
 }
 
 \arguments{
@@ -72,13 +83,16 @@ Davide Rambaldi
     Data(parent.fitting)
 
     # fixedModel with estimates
-    parent.fitting <-  parentFitting(PKH26data[[1]], "FL2-Height LOG", fixedModel=TRUE, fixedPars=list(M=NA,S=NA))
+    parent.fitting <-  parentFitting(PKH26data[[1]], "FL2-Height LOG", 
+                                     fixedModel=TRUE, fixedPars=list(M=NA,S=NA))
 
     # fixedModel with user values
-    parent.fitting <-  parentFitting(PKH26data[[1]], "FL2-Height LOG", fixedModel=TRUE, fixedPars=list(M=810,S=16))
+    parent.fitting <-  parentFitting(PKH26data[[1]], "FL2-Height LOG", 
+                                     fixedModel=TRUE, fixedPars=list(M=810,S=16))
 
     # fixedModel with locked Peak Size (one fixed parameter)
-    parent.fitting <-  parentFitting(PKH26data[[1]], "FL2-Height LOG", fixedModel=TRUE, fixedPars=list(S=17))
+    parent.fitting <-  parentFitting(PKH26data[[1]], "FL2-Height LOG", 
+                                     fixedModel=TRUE, fixedPars=list(S=17))
   }
 }
 

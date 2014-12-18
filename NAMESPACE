@@ -14,6 +14,8 @@ importFrom(stats, coef, confint)
 
 importFrom(flowViz, plot)
 
+import(methods)
+
 exportClasses(
   "parentFittingData",
   "proliferationFittingData"

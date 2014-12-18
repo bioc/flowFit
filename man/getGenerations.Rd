@@ -38,7 +38,9 @@ return a \code{list} object
   if(require(flowFitExampleData)){
     data(QuahAndParish)
     parent.fitting.cfse <- parentFitting(QuahAndParish[[1]], "<FITC-A>")
-    fitting.cfse <- proliferationFitting(QuahAndParish[[2]], "<FITC-A>", parent.fitting.cfse@parentPeakPosition, parent.fitting.cfse@parentPeakSize)
+    fitting.cfse <- proliferationFitting(QuahAndParish[[2]], "<FITC-A>", 
+                                         parent.fitting.cfse@parentPeakPosition, 
+                                         parent.fitting.cfse@parentPeakSize)
     generationList <- getGenerations(fitting.cfse)
 
     # to extract a vector of percentage of cells for generation you can use:

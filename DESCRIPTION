@@ -13,7 +13,7 @@ Description: This package estimate the proliferation of a cell
         distribution in a FACS experiment.
 License: Artistic-2.0
 LazyLoad: yes
-Imports: flowCore, flowViz, graphics, methods, kza, minpack.lm, gplots
+Imports: flowCore, flowViz, graphics, kza, methods, minpack.lm, gplots
 Depends: R (>= 2.12.2)
 Suggests: flowFitExampleData
 Collate: flowFit-internal.R AllClasses.R AllGenerics.R show-methods.R

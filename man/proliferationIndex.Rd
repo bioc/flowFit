@@ -49,7 +49,9 @@ proliferationIndex(object)
   if(require(flowFitExampleData)){
     data(PKH26data)
     parent.fitting <-  parentFitting(PKH26data[[1]], "FL2-Height LOG")
-    my.fit <- proliferationFitting(PKH26data[[2]], "FL2-Height LOG", parent.fitting@parentPeakPosition, parent.fitting@parentPeakSize)
+    my.fit <- proliferationFitting(PKH26data[[2]], "FL2-Height LOG", 
+                                   parent.fitting@parentPeakPosition, 
+                                   parent.fitting@parentPeakSize)
     my.index <- proliferationIndex(my.fit)
   }
 }

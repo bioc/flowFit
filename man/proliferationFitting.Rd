@@ -93,7 +93,9 @@ proliferationFitting(
     # PKH26
     data(PKH26data)
     parent.fitting <-  parentFitting(PKH26data[[1]], "FL2-Height LOG")
-    my.fit <- proliferationFitting(PKH26data[[2]], "FL2-Height LOG", parent.fitting@parentPeakPosition, parent.fitting@parentPeakSize)
+    my.fit <- proliferationFitting(PKH26data[[2]], "FL2-Height LOG", 
+                                   parent.fitting@parentPeakPosition, 
+                                   parent.fitting@parentPeakSize)
     my.fit
     summary(my.fit)
     confint(my.fit)
@@ -103,11 +105,24 @@ proliferationFitting(
     plot(my.fit)
 
     # modeling with locked Peak Size
-    my.fit <- proliferationFitting(PKH26data[[2]], "FL2-Height LOG", parent.fitting@parentPeakPosition, parent.fitting@parentPeakSize, fixedModel=TRUE, fixedPars=list(S=16))
+    my.fit <- proliferationFitting(PKH26data[[2]], "FL2-Height LOG", 
+                                   parent.fitting@parentPeakPosition, 
+                                   parent.fitting@parentPeakSize, 
+                                   fixedModel=TRUE, 
+                                   fixedPars=list(S=16))
+                                   
     # modeling with locked Peak Size and Position
-    my.fit <- proliferationFitting(PKH26data[[2]], "FL2-Height LOG", parent.fitting@parentPeakPosition, parent.fitting@parentPeakSize, fixedModel=TRUE, fixedPars=list(S=16, M=810))
+    my.fit <- proliferationFitting(PKH26data[[2]], "FL2-Height LOG", 
+                                   parent.fitting@parentPeakPosition, 
+                                   parent.fitting@parentPeakSize, 
+                                   fixedModel=TRUE, 
+                                   fixedPars=list(S=16, M=810))
+                                   
     # modeling with locked Peak Size, Position and Distance
-    my.fit <- proliferationFitting(PKH26data[[2]], "FL2-Height LOG", parent.fitting@parentPeakPosition, parent.fitting@parentPeakSize, fixedModel=TRUE, fixedPars=list(S=16, M=810, D=76))
+    my.fit <- proliferationFitting(PKH26data[[2]], "FL2-Height LOG", 
+                                   parent.fitting@parentPeakPosition, 
+                                   parent.fitting@parentPeakSize, 
+                                   fixedModel=TRUE, fixedPars=list(S=16, M=810, D=76))
 
     # generations as vector
     my.fit@generations
@@ -117,7 +132,9 @@ proliferationFitting(
     # CFSE, CPD and CTV data
     data(QuahAndParish)
     parent.fitting.cfse <- parentFitting(QuahAndParish[[1]], "<FITC-A>")
-    fitting.cfse <- proliferationFitting(QuahAndParish[[2]], "<FITC-A>", parent.fitting.cfse@parentPeakPosition, parent.fitting.cfse@parentPeakSize)
+    fitting.cfse <- proliferationFitting(QuahAndParish[[2]], "<FITC-A>", 
+                                   parent.fitting.cfse@parentPeakPosition, 
+                                   parent.fitting.cfse@parentPeakSize)
 
     summary(fitting.cfse)
     confint(fitting.cfse)
@@ -129,10 +146,16 @@ proliferationFitting(
 
     # for CPD samples we use a Fixed Model: we keep fixed in the model the Parent Peak Position
     parent.fitting.cpd <- parentFitting(QuahAndParish[[1]], "<APC-A>")
-    fitting.cpd <- proliferationFitting(QuahAndParish[[3]], "<APC-A>", parent.fitting.cpd@parentPeakPosition, parent.fitting.cpd@parentPeakSize, fixedModel=TRUE, fixedPars=list(M=parent.fitting.cpd@parentPeakPosition))
+    fitting.cpd <- proliferationFitting(QuahAndParish[[3]], "<APC-A>", 
+                                   parent.fitting.cpd@parentPeakPosition, 
+                                   parent.fitting.cpd@parentPeakSize, 
+                                   fixedModel=TRUE, 
+                                   fixedPars=list(M=parent.fitting.cpd@parentPeakPosition))
 
     parent.fitting.ctv <- parentFitting(QuahAndParish[[1]], "<Alexa Fluor 405-A>")
-    fitting.ctv <- proliferationFitting(QuahAndParish[[4]], "<Alexa Fluor 405-A>", parent.fitting.ctv@parentPeakPosition, parent.fitting.ctv@parentPeakSize)
+    fitting.ctv <- proliferationFitting(QuahAndParish[[4]], "<Alexa Fluor 405-A>", 
+                                   parent.fitting.ctv@parentPeakPosition, 
+                                   parent.fitting.ctv@parentPeakSize)
 
     # let's compare the generations across the 3 samples:
     plot(parent.fitting.cfse, main="CFSE Non Stimulated")
