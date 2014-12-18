@@ -39,6 +39,13 @@
 .getKeywordValue <- function(flowframe, channel, suffix)
 {
     .channel.position <- match(channel, keyword(flowframe))
+    # in some cases (flowJo), the channel name is without "<,>" so try again without "<"
+    if (is.na(.channel.position))
+    {
+        .channel.position <- match(gsub("[<>]","", channel), keyword(flowframe))
+    }
+
+    # still na?
     if (is.na(.channel.position))
     {
         msg <- paste("Channel", channel, "is not present in flowFrame keywords!", sep=" ")
