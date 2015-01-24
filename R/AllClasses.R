@@ -82,7 +82,7 @@ setMethod (
     }
     .Object@channel = channel
     # FIRST call basic initialize
-    .Object <- callNextMethod()
+    .Object <- callNextMethod(.Object, ...)
     return(.Object)
   }
 )
@@ -171,7 +171,7 @@ setMethod (
     }
     .Object@channel = channel
     # FIRST call basic initialize
-    .Object <- callNextMethod()
+    .Object <- callNextMethod(.Object, ...)
     return(.Object)
   }
 )
