@@ -248,9 +248,10 @@ In order to reduce the download size of \Rpackage{flowFit}, we have moved the ex
 
 <<CompanionPkg, eval=FALSE>>=
 
-source("http://www.bioconductor.org/biocLite.R")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
 
-biocLite("flowFitExampleData")
+BiocManager::install("flowFitExampleData")
 @
 
 First of all we must load the package and the examples:
