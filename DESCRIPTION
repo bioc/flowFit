@@ -1,7 +1,7 @@
 Package: flowFit
 Type: Package
 Title: Estimate proliferation in cell-tracking dye studies
-Version: 1.27.0
+Version: 1.27.1
 Date: 2012-11-29
 Author: Davide Rambaldi
 Maintainer: Davide Rambaldi <davide.rambaldi@gmail.com>
@@ -20,7 +20,8 @@ Collate: flowFit-internal.R AllClasses.R AllGenerics.R show-methods.R
         summary-methods.R view-accessors.R coef-methods.R
         confint-methods.R plot-methods.R logTicks.R
         generationsDistance.R proliferationGrid.R parentFitting.R
-        proliferationFitting.R proliferationIndex.R getGenerations.R
+        proliferationFitting.R proliferationIndex.R getGenerations.R zzz.R
 URL:
 BugReports: Davide Rambaldi <davide.rambaldi@gmail.com>
 biocViews: ImmunoOncology, FlowCytometry, CellBasedAssays
+PackageStatus: Deprecated
